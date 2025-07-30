@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import {connectDB} from "./config/database.js";
 import userRouter from "./routes/user.route.js";
+import serviceRoute from "./routes/service.route.js";
+import slotRoute from "./routes/slot.route.js";
 
 //Express
 const app = express();
@@ -18,7 +20,9 @@ app.use(cookieParser());
 const PORT = process.env.PORT || 4000
 
 //API Mount
-app.use("/api/v1/auth", userRouter)
+app.use("/api/v1/auth", userRouter);
+app.use("/api/v1/services", serviceRoute);
+app.use("/api/v1/slots", slotRoute);
 
 //Database connection
 connectDB();

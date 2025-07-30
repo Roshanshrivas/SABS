@@ -18,7 +18,6 @@ export const auth = async (req, res, next) => {
 
     // 3. Verify token
     const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-    console.log("SECRET USED:", process.env.ACCESS_TOKEN_SECRET);
 
 
     // 4. Attach user to request

@@ -14,7 +14,10 @@ const bookingSchema = new mongoose.Schema({
         ref:"TimeSlot"
     },
     status:{
+        type: String,
         enum:["booked", "pending", "completed"],
         default:"pending"
     }
 })
+
+export const Booking = mongoose.model("Booking", bookingSchema);

@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const serviceSchema = new mongoose.Schema({
-    serviceName:{
+    serviceName: [{
         type:String,
         required:true,
-    },
+    }],
     duration:{
         type:Number
     },
@@ -14,6 +14,7 @@ const serviceSchema = new mongoose.Schema({
     },
     description:{
         type:String,
+        trim:true,
     },
 })
 
